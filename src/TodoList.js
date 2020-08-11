@@ -77,7 +77,7 @@ const TodoList = () => {
 
 	return (
 		<div className="TodoList">
-			<h1 className="TodoList-Header">My Todo List</h1>
+			<h1 className="TodoList-Header">My To Do List</h1>
 			<NewTodoForm addTodo={addTodo} />
 			<div className="TodoList-Container">{todos.map((todo) => checkIfEditing(todo))}</div>
 		</div>
