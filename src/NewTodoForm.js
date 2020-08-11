@@ -26,7 +26,7 @@ const NewTodoForm = ({ addTodo }) => {
 					type="text"
 					id="text"
 					name="text"
-					placeholder="Breakfast..."
+					placeholder="Eat Breakfast..."
 					value={todoData.text}
 					onChange={handleChange}
 				/>
