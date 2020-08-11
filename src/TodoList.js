@@ -11,38 +11,35 @@ import { useSelector, useDispatch } from 'react-redux';
  */
 
 const TodoList = () => {
-	// const INITIAL_STATE = JSON.parse(localStorage.getItem('todos')) || [];
 	const todos = useSelector((state) => state.todos);
 	const dispatch = useDispatch();
 
 	const addTodo = ({ text }) => {
 		if (!text) return;
-		const newTodo = { text, id: uuid() };
-		// const updatedTodos = [ ...todos, newTodo ];
-		// setTodos((todos) => updatedTodos);
+		const newTodo = { text, id: uuid(), complete: false, editing: false };
+		const updatedTodos = [ ...todos, newTodo ];
+		updateLocalStorage(updatedTodos);
 		dispatch({ type: 'ADD_TODO', payload: newTodo });
-		// updateLocalStorage(updatedTodos);
 	};
 
-	// const updateLocalStorage = (updatedTodos) => {
-	// 	localStorage.setItem('todos', JSON.stringify(updatedTodos));
-	// };
+	const updateLocalStorage = (updatedTodos) => {
+		localStorage.setItem('todos', JSON.stringify(updatedTodos));
+	};
 
 	const removeTodo = (id) => {
-		// setTodos((todos) => todos.filter((todo) => todo.id !== id));
+		const storedTodos = JSON.parse(localStorage.getItem('todos'));
+		const updatedTodos = storedTodos.filter((todo) => todo.id !== id);
+		updateLocalStorage(updatedTodos);
 		dispatch({ type: 'REMOVE_TODO', id });
-		// const storedTodos = JSON.parse(localStorage.getItem('todos'));
-		// const updatedTodos = storedTodos.filter((todo) => todo.id !== id);
-		// updateLocalStorage(updatedTodos);
 	};
 
-	// const toggleComplete = (id) => {
-	// 	const todo = todos.find((todo) => todo.id === id);
-	// 	todo.complete = !todo.complete;
-	// 	const updatedTodos = [ ...todos ];
-	// 	setTodos((todos) => updatedTodos);
-	// 	updateLocalStorage(updatedTodos);
-	// };
+	const toggleComplete = (id) => {
+		const todo = todos.find((todo) => todo.id === id);
+		todo.complete = !todo.complete;
+		const updatedTodos = [ ...todos ];
+		setTodos((todos) => updatedTodos);
+		updateLocalStorage(updatedTodos);
+	};
 
 	// const toggleEditing = (id) => {
 	// 	const todo = todos.find((todo) => todo.id === id);
