@@ -10,7 +10,6 @@ const Todo = ({ id, text, complete, removeTodo, toggleEditing, toggleComplete })
 		removeTodo(id);
 	};
 	const handleEdit = (e) => {
-		// const { id } = e.target.parentElement;
 		toggleEditing(id);
 	};
 
@@ -19,7 +18,6 @@ const Todo = ({ id, text, complete, removeTodo, toggleEditing, toggleComplete })
 	};
 	return (
 		<div key={id} id={id} className="Todo">
-			{/* <span className="Todo-Text">{text}</span> */}
 			<span onClick={handleComplete} className={`Todo-Text ${complete ? 'complete' : ''}`}>
 				{text}
 			</span>

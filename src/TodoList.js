@@ -79,19 +79,7 @@ const TodoList = () => {
 		<div className="TodoList">
 			<h1 className="TodoList-Header">My Todo List</h1>
 			<NewTodoForm addTodo={addTodo} />
-			<div className="TodoList-Container">
-				{/* {todos.map((todo) => (
-					<Todo
-						text={todo.text}
-						key={todo.id}
-						id={todo.id}
-						complete={todo.complete}
-						removeTodo={removeTodo}
-						toggleComplete={toggleComplete}
-					/>
-				))} */}
-				{todos.map((todo) => checkIfEditing(todo))}
-			</div>
+			<div className="TodoList-Container">{todos.map((todo) => checkIfEditing(todo))}</div>
 		</div>
 	);
 };
