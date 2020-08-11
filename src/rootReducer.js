@@ -8,9 +8,14 @@ const rootReducer = (state = INITIAL_STATE, action) => {
 		case 'REMOVE_TODO':
 			return { ...state, todos: state.todos.filter((todo) => todo.id !== action.id) };
 		case 'TOGGLE_COMPLETE':
-			return { ...state, todos: [ ...state.todos, action.payload ] };
+			console.log('payload is ', action.payload);
+			return { ...state, todos: action.payload };
 		case 'TOGGLE_EDITING':
-			return { ...state, todos: [ ...state.todos, action.payload ] };
+			console.log('payload is ', action.payload);
+			return { ...state, todos: action.payload };
+		case 'EDIT_TODOS':
+			console.log('payload is ', action.payload);
+			return { ...state, todos: action.payload };
 		default:
 			return state;
 	}
