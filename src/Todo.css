@@ -1,0 +1,38 @@
+.complete {
+	text-decoration: line-through;
+}
+
+.Todo {
+	margin: 1rem auto;
+	font-size: 1.3rem;
+}
+
+.Todo-Text {
+	cursor: crosshair;
+}
+
+.Todo-Edit {
+	margin: 0 10px 0 20px;
+	border-radius: 50px;
+	border: none;
+	outline: none;
+	background-color: yellowgreen;
+	padding: 4px;
+	box-shadow: 1px 1px 3px;
+}
+
+.Todo-Edit:hover {
+	box-shadow: 1px 1px 1px, -1px -1px 1px;
+}
+
+.Todo-Remove {
+	border-radius: 50px;
+	border: none;
+	background-color: rgb(205, 55, 50);
+	padding: 4px;
+	box-shadow: 1px 1px 3px;
+}
+
+.Todo-Remove:hover {
+	box-shadow: 1px 1px 1px, -1px -1px 1px;
+}

@@ -1,38 +1,99 @@
 .App {
-  text-align: center;
+	text-align: center;
+	font-family: "Comic sans MS", Helvetica, sans-serif;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+	height: 40vmin;
+	pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
+}
+
+body {
+	/* background-color: #efefef; */
+	background-color: seashell;
+}
+
+h1 {
+	font-size: 3.1rem;
+}
+
+.NewTodoForm-Add {
+	border-radius: 50px;
+	border: none;
+	outline: none;
+	background-color: rgb(50, 104, 205);
+	padding: 5px;
+	box-shadow: 1px 1px 3px;
+}
+
+.NewTodoForm-Add:hover {
+	box-shadow: 1px 1px 1px, -1px -1px 1px;
+}
+
+.EditTodoForm-Button {
+	border-radius: 50px;
+	border: none;
+	outline: none;
+	background-color: rgb(192, 119, 59);
+	padding: 5px;
+	box-shadow: 1px 1px 3px;
+}
+
+.EditTodoForm-Button:hover {
+	box-shadow: 1px 1px 1px, -1px -1px 1px;
+}
+
+input[type=text] {
+	padding: 5px;
+	border: 2px solid #ccc;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	margin: 0.3rem;
+}
+input[type=text]:focus {
+	border-color: #333;
+}
+
+input[type=submit] {
+	padding: 5px 15px;
+	background: #ccc;
+	border: 0 none;
+	cursor: pointer;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
 }
 
 .App-link {
-  color: #61dafb;
+	color: #61dafb;
+}
+
+button {
+	width: 45px;
+	height: 25px;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
